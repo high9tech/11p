@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIGH TECH PS - صيانة وتطوير أجهزة الألعاب</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            max-width: 600px;
+            width: 90%;
+        }
+        img.banner {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #00ffff;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #cccccc;
+            font-size: 1.1rem;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 10px;
+            background: #003333;
+            border: 1px solid #00ffff;
+            border-radius: 5px;
+            color: #00ffff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="banner.png" alt="High Tech PS Banner" class="banner">
+        <h1>HIGH TECH PS</h1>
+        <p>نظام الصيانة والتطوير البرمجي - منصة الخدمات المركزية</p>
+        <div class="status">الموقع جاهز ويعمل بكفاءة على الشبكة المحلية</div>
+    </div>
+
+</body
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js')
+                .then((reg) => {
+                    console.log('Service Worker registered successfully:', reg.scope);
+                })
+                .catch((err) => {
+                    console.log('Service Worker registration failed:', err);
+                });
+        });
+    }
+</script>
+>
+</html>
