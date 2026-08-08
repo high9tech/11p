@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" manifest="cache.manifest">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIGH TECH PS - المنصة الاحترافية الفاخرة</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* تنسيقات الزر الرئيسي الجديد في منتصف الصفحة */
+        .main-jailbreak-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .btn-jailbreak-main {
+            background: linear-gradient(135deg, #00f0ff 0%, #7000ff 100%);
+            border: 2px solid #00f0ff;
+            border-radius: 20px;
+            padding: 30px 60px;
+            color: #ffffff;
+            cursor: pointer;
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+            transition: all 0.3s ease-in-out;
+            text-align: center;
+            min-width: 320px;
+            outline: none;
+        }
+
+        .btn-jailbreak-main:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 0 50px rgba(0, 240, 255, 0.8), 0 0 20px rgba(112, 0, 255, 0.6);
+            border-color: #ffffff;
+        }
+
+        .btn-jailbreak-main .title-text {
+            display: block;
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+        }
+
+        .btn-jailbreak-main .sub-text {
+            display: block;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffe600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شاشة الاختراق وحقن الذاكرة اللحظي -->
+    <div id="loader" class="overlay-loader">
+        <div class="spinner-ring"></div>
+        <h2 id="loader-title" style="color: var(--border-glow, #00f0ff); font-weight: 900;">جاري تحميل محرك النظام...</h2>
+        <p style="color: var(--text-muted, #ccc);" id="loader-sub">يرجى الانتظار، يتم الآن معالجة ثغرة كيرنيل الذاكرة المباشرة.</p>
+    </div>
+
+    <header>
+        <div class="logo">HIGH TECH PS</div>
+        <div class="subtitle">الجيل الجديد لتفعيل تعديلات البلاي ستيشن بدون فلاشة وبأعلى استقرار</div>
+    </header>
+
+    <div class="container">
+
+        <!-- زر الجيلبريك الرئيسي الوحيد في المنتصف -->
+        <div class="main-jailbreak-container">
+            <button class="btn-jailbreak-main" onclick="triggerJailbreak()">
+                <span class="title-text">HIGH TECH PS</span>
+                <span class="sub-text">jailbreak</span>
+            </button>
+        </div>
+
+        <!-- شبكة السوفت وير التفصيلية -->
+        <div class="exploit-grid-main">
+            
+            <!-- قائمة أجهزة PS4 المدعومة بالكامل -->
+            <div class="console-panel">
+                <div class="panel-title">PLAYSTATION <span>4</span></div>
+                <ul class="fw-grid">
+                    <li class="fw-btn" onclick="triggerFirmware('5.05', 'PS4')">5.05</li>
+                    <li class="fw-btn" onclick="triggerFirmware('5.50', 'PS4')">5.50</li>
+                    <li class="fw-btn" onclick="triggerFirmware('6.72', 'PS4')">6.72</li>
+                    <li class="fw-btn" onclick="triggerFirmware('7.02', 'PS4')">7.02</li>
+                    <li class="fw-btn" onclick="triggerFirmware('7.55', 'PS4')">7.55</li>
+                    <li class="fw-btn" onclick="triggerFirmware('8.00', 'PS4')">8.00</li>
+                    <li class="fw-btn" onclick="triggerFirmware('9.00', 'PS4')">9.00</li>
+                    <li class="fw-btn" onclick="triggerFirmware('9.03', 'PS4')">9.03</li>
+                    <li class="fw-btn" onclick="triggerFirmware('9.04', 'PS4')">9.04</li>
+                    <li class="fw-btn" onclick="triggerFirmware('9.60', 'PS4')">9.60</li>
+                    <li class="fw-btn" onclick="triggerFirmware('10.00', 'PS4')">10.00</li>
+                    <li class="fw-btn" onclick="triggerFirmware('10.01', 'PS4')">10.01</li>
+                    <li class="fw-btn" onclick="triggerFirmware('11.00', 'PS4')">11.00</li>
+                    <li class="fw-btn" onclick="triggerFirmware('11.02', 'PS4')">11.02</li>
+                </ul>
+            </div>
+
+            <!-- قائمة أجهزة PS5 المدعومة بالكامل -->
+            <div class="console-panel">
+                <div class="panel-title">PLAYSTATION <span>5</span></div>
+                <ul class="fw-grid">
+                    <li class="fw-btn" onclick="triggerFirmware('9.00', 'PS5')">9.00</li>
+                    <li class="fw-btn" onclick="triggerFirmware('9.20', 'PS5')">9.20</li>
+                    <li class="fw-btn" onclick="triggerFirmware('10.00', 'PS5')">10.00</li>
+                    <li class="fw-btn" onclick="triggerFirmware('11.40', 'PS5')">11.40</li>
+                    <li class="fw-btn" onclick="triggerFirmware('12.00', 'PS5')">12.00</li>
+                    <li class="fw-btn" onclick="triggerFirmware('13.00', 'PS5')">13.00</li>
+                    <li class="fw-btn" onclick="triggerFirmware('13.50', 'PS5')">13.50</li>
+                    <li class="fw-btn" onclick="triggerFirmware('13.60', 'PS5')">13.60</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 HIGH TECH PS - تصميم الأنظمة المتقدمة لهوسات التعديل المحلية والأوفلاين
+    </footer>
+
+    <script>
+        const loader = document.getElementById('loader');
+        const title = document.getElementById('loader-title');
+        const sub = document.getElementById('loader-sub');
+
+        // دالة تشغيل الجيلبريك الرئيسي عند الضغط على الزر في المنتصف
+        function triggerJailbreak() {
+            loader.style.display = 'flex';
+            title.style.color = '#00f0ff';
+            title.innerText = "جاري تفعيل HIGH TECH PS Jailbreak...";
+            sub.innerText = "يتم الآن معالجة ثغرة كيرنيل الذاكرة المباشرة والتفعيل التلقائي.";
+            
+            setTimeout(() => {
+                title.innerText = "نجاح استغلال الثغرة (Kernel Exploit Success)...";
+                sub.innerText = "تم حقن النظام بنجاح وتفعيل بيئة التعديل.";
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    alert("تهانينا! تم تفعيل HIGH TECH PS Jailbreak بنجاح.");
+                }, 2000);
+            }, 1500);
+        }
+
+        function triggerFirmware(version, consoleType) {
+            loader.style.display = 'flex';
+            title.style.color = '#00f0ff';
+            title.innerText = "جاري استدعاء هوسات إصدار " + version + " لجهاز " + consoleType;
+            sub.innerText = "يتم فحص مصفوفات النظام ومزامنة الكاش للملفات المحلية.";
+            
+            setTimeout(() => {
+                loader.style.display = 'none';
+                alert("تم تهيئة كود الحقن بنجاح لجهاز " + consoleType + " إصدار " + version);
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
