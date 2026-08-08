@@ -29,7 +29,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// جلب الملفات من الكاش في حال عدم الاتصال بالإنترنت
+// جلب الملفات من الكاش عند انقطاع الإنترنت
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
