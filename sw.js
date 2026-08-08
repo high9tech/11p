@@ -1,42 +1,24 @@
-const CACHE_NAME = 'high-tech-ps-v1';
-const assetsToCache = [
-    './',
-    './index.html',
-    './banner.png',
-    './background.jpg'
+const CACHE_NAME = 'hightech-ps-cache-v1';
+const urlsToCache = [
+  './index.html'
 ];
 
-// تثبيت الكاش وحفظ الملفات
-self.addEventListener('install', (event) => {
-    event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => {
-            return cache.addAll(assetsToCache);
-        })
-    );
-    self.skipWaiting();
+// تثبيت الكاش
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => {
+        return cache.addAll(urlsToCache);
+      })
+  );
 });
 
-// تفعيل الكاش وحذف النسخ القديمة إن وجدت
-self.addEventListener('activate', (event) => {
-    event.waitUntil(
-        caches.keys().then((keys) => {
-            return Promise.all(
-                keys.map((key) => {
-                    if (key !== CACHE_NAME) {
-                        return caches.delete(key);
-                    }
-                })
-            );
-        })
-    );
-    self.clients.claim();
-});
-
-// جلب الملفات من الكاش في حال عدم وجود انترنت
-self.addEventListener('fetch', (event) => {
-    event.respondWith(
-        caches.match(event.request).then((cachedResponse) => {
-            return cachedResponse || fetch(event.request);
-        })
-    );
+// جلب الملفات من الكاش عند انقطاع الإنترنت
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request)
+      .then(response => {
+        return response || fetch(event.request);
+      })
+  );
 });
