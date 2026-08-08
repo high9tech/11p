@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" manifest="cache.manifest">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HIGH TECH PS - install cash </title>
+    <title>HIGH TECH PS - Install Cache</title>
     <style>
         * {
             box-sizing: border-box;
@@ -176,17 +176,32 @@
             alertBox.style.display = 'block';
             alertBox.innerHTML = `جاري تفعيل تعديل ${consoleType} للإصدارات (${range}) بواسطة HIGH TECH PS...`;
             
-            // محاكاة استدعاء الثغرة المدمجة
             setTimeout(() => {
                 alertBox.innerHTML = `تم تحميل البيانات بنجاح! يرجى إغلاق المتصفح أو العودة للقائمة الرئيسية.`;
             }, 3000);
         }
 
-        // تسجيل الكاش للعمل بدون انترنت
+        // تسجيل Service Worker و Application Cache
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
-            .then(() => console.log("Cache Registered Successfully!"))
-            .catch((err) => console.log("Cache Registration Failed", err));
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                .then((reg) => {
+                    console.log("Cache Registered Successfully!", reg);
+                })
+                .catch((err) => {
+                    console.log("Cache Registration Failed", err);
+                });
+            });
+        }
+
+        // دعم ApplicationCache القديم متوافق مع متصفحات PS4
+        if (window.applicationCache) {
+            window.applicationCache.addEventListener('updateready', function() {
+                if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+                    window.applicationCache.swapCache();
+                    window.location.reload();
+                }
+            }, false);
         }
     </script>
 </body>
