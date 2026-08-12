@@ -1,0 +1,8 @@
+{
+  "name": "HIGH TECH PS Host Exploit",
+  "short_name": "HIGH TECH PS",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#07090e",
+  "theme_color": "#00f3ff"
+}
