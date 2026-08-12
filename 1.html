@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIGH TECH PS - Official Host Exploit</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <!-- Main Brand Header -->
+        <header>
+            <h1>HIGH TECH PS</h1>
+            <p>مركز تعديل وسوفتوير أجهزة البلايستيشن الاحترافي</p>
+        </header>
+
+        <!-- Dynamic Cache Progress Bar -->
+        <div class="cache-wrapper">
+            <div class="cache-header">
+                <span id="cache-status">جاري إعداد الصفحة وتخزين الكاش (OffLine Ready)...</span>
+                <span id="cache-percent">0%</span>
+            </div>
+            <div class="progress-bar-bg">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Seal Action Button (الختم الرئيسي) -->
+        <div class="seal-wrapper">
+            <button id="seal-btn" class="seal-button" onclick="launchExploit()">
+                <div class="seal-content">
+                    <span class="seal-brand">HIGH TECH PS</span>
+                    <div class="seal-divider"></div>
+                    <span class="seal-goldhen">GOLD HEN</span>
+                    <span class="seal-sub">إضغط لتشغيل الثغرة</span>
+                </div>
+            </button>
+        </div>
+
+        <!-- Supported Devices Info -->
+        <section class="cards-grid">
+            <div class="card card-ps4">
+                <h2>
+                    <span>بلايستيشن 4</span>
+                    <span class="card-badge ps4-badge">PS4</span>
+                </h2>
+                <p>تعديل وتفعيل كافة الإصدارات من <strong>5.00</strong> حتى <strong>11.02</strong></p>
+            </div>
+
+            <div class="card card-ps5">
+                <h2>
+                    <span>بلايستيشن 5</span>
+                    <span class="card-badge ps5-badge">PS5</span>
+                </h2>
+                <p>تعديل وتفعيل كافة الإصدارات من <strong>9.00</strong> حتى <strong>13.60</strong></p>
+            </div>
+        </section>
+
+        <!-- Exploit Framework Stack -->
+        <footer class="tech-tags">
+            <div class="tag">GoldHen</div>
+            <div class="tag">Payload</div>
+            <div class="tag">WebKit</div>
+            <div class="tag">PsFree</div>
+        </footer>
+
+        <!-- Log Output Console -->
+        <div class="console-box">
+            <span class="console-prefix">[SYS]:</span>
+            <span id="console-log">Ready to exploit. Insert USB if required for your firmware version.</span>
+        </div>
+    </div>
+
+    <script src="cache.js"></script>
+</body>
+</html>
